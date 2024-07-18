@@ -37,12 +37,6 @@ run_tests;
 
 __DATA__
 
-=== TEST 0: store secret into localstack
---- exec
-awslocal secretsmanager create-secret --name /apisix-key/jack --description 'APISIX Secret' --secret-string '{\"key\":\"value\",\"test\":\"testVaule\"}'
---- timeout: 6
-
-
 === TEST 1: check key: error format
 --- config
     location /t {
